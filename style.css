@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Whisper&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap");
+
+:root {
+  --darkerpinky: #ffffff;
+  --textpinky: #838383;
+  --lightpinky: #757675;
+  --textp: #474847;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-image: url("a.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 1.4rem;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+h1 {
+  font-family: "Whisper", cursive;
+  color: var(--lightpinky);
+  font-size: 75px;
+  margin-left: 62px;
+}
+
+main {
+  margin: auto;
+  position: relative;
+  padding-bottom: 1.5rem;
+  margin-left: 45rem;
+  border: 1px solid var(--darkerpinky);
+  border-radius: 15px;
+  background: #ffffff45;
+}
+
+li {
+  cursor: pointer;
+  transition: 0.2s;
+  position: relative;
+  user-select: none;
+  list-style: none;
+}
+li input {
+  display: none;
+}
+li label {
+  position: relative;
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: var(--textp);
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 18px 18px 18px 40px;
+  display: block;
+}
+li span.box {
+  display: inline-block;
+  border-radius: 6px;
+  border: 2px solid var(--darkerpinky);
+  width: 26px;
+  height: 26px;
+  vertical-align: middle;
+  transition: 0.3s ease;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+li span.box:before,
+li span.box:after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 16px;
+  border-radius: 40px;
+  background: var(--textpinky);
+  transition: all 0.3s ease;
+}
+li span.box:before {
+  transform: rotate(45deg) translateY(-5px) translateX(10px) scale(0);
+}
+li span.box:after {
+  height: 8px;
+  transform: rotate(-45deg) translateY(10px) translateX(-4px) scale(0);
+}
+li input:checked + label span.box {
+  background: var(--darkerpinky);
+  border-color: var(--textpinky);
+}
+li input:checked + label span.box:before {
+  transform: rotate(45deg) translateY(-5px) translateX(10px) scale(1);
+}
+li input:checked + label span.box:after {
+  height: 8px;
+  transform: rotate(-45deg) translateY(10px) translateX(-4px) scale(1);
+}
+li:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+#new-todo {
+  border-radius: 15px;
+}
